@@ -1,0 +1,62 @@
+$height: 10px;
+$border: 1px solid black;
+$radius: 50%;
+$number-width:30px;
+$number-height:30px;
+.progress-bar {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr min-content 1fr min-content 1fr;
+    margin-top: 15px;
+    padding:10px;
+    .bar {
+        border: $border;
+        height: $height;
+        width: 100%;
+    }
+    .bar-one {
+        grid-column: 1/2;
+    }
+    .bar-two {
+        grid-column: 3/4;
+    }
+    .bar-three {
+        grid-column: 5/6;
+    }
+    .progress {
+        height: 100%;
+        width: 0%;
+        background: red;
+        transition: width .6s;
+    }
+    .number {
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        width: $number-width;
+        height: $number-height;
+        border: $border;
+        border-radius: $radius;
+        background: white;
+        color: black;
+
+        .tick {
+            font-size:15px;
+            color: white;
+            z-index: 999;
+        }
+        .number-one,.number-two {
+            z-index: 999;
+        }
+        .number-progress {
+            display: flex;
+            position: absolute;
+            background:red;
+            width: 0px;
+            height: 0px;
+            border-radius: $radius;
+            transition: .3s;
+        }
+    }
+
+}
